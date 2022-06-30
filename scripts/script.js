@@ -131,8 +131,7 @@ String.prototype.shuffle = function () {
 // -----------------------------------------------------------------------
 
 function genGameBag(){
-	let gameBag = "ASDFASDF";
-	return gameBag.shuffle();
+	let gameBag = "";
 
 	TILE_JSON['pieces'].forEach(function(row){
 		for(let i=0; i<row['amount']; i++){
