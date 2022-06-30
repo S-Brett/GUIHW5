@@ -1,11 +1,17 @@
+repo: https://github.com/S-Brett/GUIHW5
+site: https://s-brett.github.io/GUIHW5/
+
 I'll keep it quick:
 
 __INCOMPLETE~ISH__
 - There is no checking if the words are correct
-- There is no button to shuffle or get more tiles, you get 7 and must refresh to get a new hand
-- You cannot submit words and get more letters
+- Words on the board will be deleted and counted towards your score 
+	regardless of correctness
 
 __COMPLETE__
+- Once a word is submitted it is counted and the tiles are removed and 
+	replaced in your hand.
+- A game over will alert the player when no more tiles are on the board
 - You can place and remove letters and the word/score will be updated dynamically
 - Each refresh gives you a new hand from a generated 'bag' that has each tile in it
 - the the pretty pictures are there

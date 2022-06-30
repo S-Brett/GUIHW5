@@ -126,7 +126,8 @@ String.prototype.shuffle = function () {
 // -----------------------------------------------------------------------
 
 function genGameBag(){
-	let gameBag = "";
+	let gameBag = "ASDFASDF";
+	return gameBag.shuffle();
 
 	TILE_JSON['pieces'].forEach(function(row){
 		for(let i=0; i<row['amount']; i++){
@@ -223,7 +224,8 @@ function genTile(_letter='A'){
         drop: function (event, ui) { dropTile($(this), ui) }
     });
 
-
+    newTile.id = TILE_ID;
+    TILE_ID += 1;
 	return newTile;
 
 
@@ -240,9 +242,11 @@ function moveTile(_droppable, _draggable){
 
 	let letter = _draggable.draggable[0]['letter'];
 	let score = _draggable.draggable[0]['score'];
+	let id = _draggable.draggable[0].id;
 
-	console.log(_droppable[0].className);
-	console.log();
+	// console.log(id);
+	// console.log(_droppable[0].className);
+	// console.log();
 
 	let dropClasses = _droppable[0].className
 	if(dropClasses.includes('rack')){
@@ -256,6 +260,9 @@ function moveTile(_droppable, _draggable){
 			CURRENT_SCORE -= score;
 		}
 		
+		let index = TILES_IN_PLAY.indexOf(id);
+		if (TILES_IN_PLAY.indexOf(id) > -1) { TILES_IN_PLAY.splice(index, 1); }
+
 		let outWord = CURRENT_WORD.toString().replace(/,/g, '');
 		$("#info #score #output").html(CURRENT_SCORE);
 		$("#info #word #output").html(outWord);
@@ -275,14 +282,17 @@ function dropTile(_droppable, _draggable){
 	// let CURRENT_WORD = "        ";
 	// let CURRENT_SCORE = 0;
 
-	console.log(_droppable);
-	console.log(_draggable);
+	// console.log(_droppable);
+	// console.log(_draggable);
 
 	let letter = _draggable.draggable[0]['letter'];
 	let score = _draggable.draggable[0]['score'];
+	let id = _draggable.draggable[0].id;
 
-	console.log(_droppable[0].className);
-	console.log();
+	// console.log(id);
+
+	// console.log(_droppable[0].className);
+	// console.log();
 
 	let dropClasses = _droppable[0].className
 	if(dropClasses.includes('rack')){
@@ -296,7 +306,7 @@ function dropTile(_droppable, _draggable){
 			CURRENT_SCORE += score;
 		}
 		
-
+		if(TILES_IN_PLAY.indexOf(id) < 0){ TILES_IN_PLAY.push(id) };
 		let outWord = CURRENT_WORD.toString().replace(/,/g, '');
 		$("#info #score #output").html(CURRENT_SCORE);
 		$("#info #word #output").html(outWord);
@@ -309,7 +319,41 @@ function dropTile(_droppable, _draggable){
 
 }
 
+let TILES_IN_PLAY = [];
+let TILE_ID = 0;
+function tallyTiles(){
+	console.log('pressed');
 
+	console.log(TILES_IN_PLAY);
+	let removed = 0;
+	for(let i=0; i<TILES_IN_PLAY.length; i++){
+		$('#playing-rack').children('#'+TILES_IN_PLAY[i]).remove();
+		removed++;
+	}
+	console.log(removed);
+
+	CURRENT_WORD = ['-','-','-','-','-','-','-','-'];
+	TILES_IN_PLAY = [];
+	$("#info #score #output").html(CURRENT_SCORE);
+	$("#info #word #output").html(CURRENT_WORD);
+
+    for(let i=0; i<removed; i++){
+    	if(gamebag.length < 1){
+    		
+    		return;
+    	}
+    	genTile(gamebag[0]);
+    	gamebag = gamebag.slice(1, gamebag.length);
+    	// console.log(gamebag)
+    }
+
+    if(gamebag.length < 1 && $('.tile').length == 0){
+    	alert("game over!");
+    }
+    console.log(gamebag);
+}
+
+let gamebag = genGameBag()
 $(document).ready(function(){
 
 	let slots = document.createElement('div');
@@ -346,7 +390,7 @@ $(document).ready(function(){
 		drop: function (event, ui) { dropTile($(this), ui) }
     });
 
-    let gamebag = genGameBag()
+    
     for(let i=0; i<7; i++){
     	genTile(gamebag[0]);
     	gamebag = gamebag.slice(1, gamebag.length);

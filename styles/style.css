@@ -22,7 +22,7 @@ body {
 
 #playing-rack #rack-img {
 	position: absolute;
-	top: 335px;
+	top: 380px;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
@@ -38,6 +38,10 @@ img.tile{
 
 .slots {
 	text-align: center;
+}
+
+button {
+	margin-bottom: 20px;
 }
 
 .slot {
