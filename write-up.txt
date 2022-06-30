@@ -1,0 +1,20 @@
+I'll keep it quick:
+
+__INCOMPLETE~ISH__
+- There is no checking if the words are correct
+- There is no button to shuffle or get more tiles, you get 7 and must refresh to get a new hand
+- You cannot submit words and get more letters
+
+__COMPLETE__
+- You can place and remove letters and the word/score will be updated dynamically
+- Each refresh gives you a new hand from a generated 'bag' that has each tile in it
+- the the pretty pictures are there
+- the score will double properly
+- UI will inform the player if a word has spaces in it
+
+__BUGS__
+- There is an unfortunate bug from the jQuery UI where it may count an item being dropped or
+	moved over a tile twice. I worked around this as much as I could, but it still results in 
+	some letters being counted twice.
+- Another thing I couldn't work around is when a tile is dragged inside of a slot, it will
+	continue to count up the score indefinitely

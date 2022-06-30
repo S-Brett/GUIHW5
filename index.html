@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SCRAAAAAABLE</title>
+
+	<!-- JQUERY + PLUGINS -->
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+	<!-- MY STUFF -->
+	<script type="text/javascript" src="scripts/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+
+<!-- <div id="draggable" class="ui-widget-content">
+  <p>Drag me around</p>
+</div> -->
+ 
+<!-- <div class="slot droppable ui-widget-content">slot 1</div>
+<div class="slot droppable ui-widget-content">slot 2</div>
+<div class="slot droppable ui-widget-content">slot 3</div> -->
+
+<header>
+	<h1>Scrabble Time</h1>
+	<hr />
+</header>
+
+<div id="info">
+	<p id="score"><em>Score:</em> <span id="output">something went wrong</span></p>
+	<p id="word"><em>Word:</em> <span id="output">something went wrong</span></p>
+</div>
+
+<br />
+
+<div id="playing-board"></div>
+
+<div id="playing-rack">
+	<img id="rack-img" class="droppable rack" src="assets/scrabble-tile-holder_640.png" width=450>
+	<img class="draggable" src="assets/tiles/Scrabble_Tile_A.jpg" width=50 hidden>
+</div>
+
+
+</body>
+
+</html>
