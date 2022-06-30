@@ -2,6 +2,8 @@
 	Brett Svendsen, UMass Lowell Computer Science
 	brett_svendsen@student.uml.edu
 
+GRADER NOTE: Website on github is NOT WORKING, please use the zip files to see
+	full functionallity. (github's not letting the button work.) 
 
 repo: https://github.com/S-Brett/GUIHW5
 site: https://s-brett.github.io/GUIHW5/
