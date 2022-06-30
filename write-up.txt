@@ -1,3 +1,8 @@
+
+	Brett Svendsen, UMass Lowell Computer Science
+	brett_svendsen@student.uml.edu
+
+
 repo: https://github.com/S-Brett/GUIHW5
 site: https://s-brett.github.io/GUIHW5/
 
@@ -9,14 +14,19 @@ __INCOMPLETE~ISH__
 	regardless of correctness
 
 __COMPLETE__
+- Tiles may be dragged to slot and rack and will return if not properly place
+	unfortunately there is no snapping to a tile. 
 - Once a word is submitted it is counted and the tiles are removed and 
 	replaced in your hand.
 - A game over will alert the player when no more tiles are on the board
 - You can place and remove letters and the word/score will be updated dynamically
 - Each refresh gives you a new hand from a generated 'bag' that has each tile in it
+- Game is restarted by refreshing the page, could've added a button but
+	was more trouble than it's worth.
 - the the pretty pictures are there
 - the score will double properly
 - UI will inform the player if a word has spaces in it
+
 
 __BUGS__
 - There is an unfortunate bug from the jQuery UI where it may count an item being dropped or

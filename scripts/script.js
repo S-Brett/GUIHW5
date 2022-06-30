@@ -1,4 +1,9 @@
 
+
+// Brett Svendsen, UMass Lowell Computer Science
+// brett_svendsen@student.uml.edu
+
+
 console.log("Hello, World!");
 
 // JSON from the given file

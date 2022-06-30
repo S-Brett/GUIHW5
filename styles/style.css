@@ -1,4 +1,8 @@
 
+/*Brett Svendsen, UMass Lowell Computer Science*/
+/*brett_svendsen@student.uml.edu*/
+
+
 body {
 	background: mistyrose;
 	margin: auto;
@@ -41,7 +45,7 @@ img.tile{
 }
 
 button {
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 
 .slot {
